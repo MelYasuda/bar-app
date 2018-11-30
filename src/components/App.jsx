@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import bootstrap from "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import KegList from "./KegList";
+import NewKegForm from "./NewKegForm";
 
 /*
   import { Link } from 'react-router-dom';
@@ -53,11 +54,18 @@ class App extends React.Component {
       ]
     };
     this.handleDecreaseKeg=this.handleDecreaseKeg.bind(this);
+    this.handleCreateNewLiquior=this.handleCreateNewLiquior.bind(this);
   }
 
   handleDecreaseKeg(id){
     let newKegList=this.state.kegList.slice();
     newKegList[id].pintsLeft--;
+    this.setState({kegList: newKegList});
+  }
+
+  handleCreateNewLiquior(newLiquior) {
+    let newKegList=this.state.kegList.slice();
+    newKegList.push(newLiquior);
     this.setState({kegList: newKegList});
   }
 
@@ -77,12 +85,12 @@ class App extends React.Component {
                 <KegList {...props} kegList={this.state.kegList} onDecreaseKeg={this.handleDecreaseKeg} />
               )}
             />
-            {/* <Route
-          path="/producelist"
-          render={props => (
-            <ProduceList {...props} availableProduce={availableProduce} />
-          )}
-        /> */}
+            <Route
+              path="/new"
+              render={props => (
+                <NewKegForm {...props} onCreateNewLiquior={this.handleCreateNewLiquior} />
+              )}
+            />
           </Switch>
         </div>
       </div>
