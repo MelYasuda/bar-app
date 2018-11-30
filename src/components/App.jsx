@@ -10,44 +10,49 @@ import KegList from './KegList';
   <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
 */
 
-const kegList = [
-  {
-    name: 'Hennessy Richard',
-    photo:
-      'https://www.hennessy.com/us/uploaded-media/images/2016/09/14/richard-image_01_sm.jpg',
-    brand: 'Hennessy',
-    price: 4944,
-    abv: 20
-  },
-  {
-    name: 'Belvedere Vodka',
-    photo:
-      'https://dg6qn11ynnp6a.cloudfront.net/wp-content/uploads/2015/03/Belvedere-Challenge-480x262.jpg',
-    brand: 'Belvedere Vodka',
-    price: 45,
-    abv: 15
-  },
-  {
-    name: 'Breckenridge Bourbon',
-    photo:
-      'https://cdn.pursuitist.com/wp-content/uploads/2013/02/Breckenridge-Bourbon-Whiskey.png',
-    brand: 'Breckenridge',
-    price: 450,
-    abv: 40
-  },
-  {
-    name: 'Courvoisier VS Cognac',
-    photo: 'http://www.lebigno.co.uk/img/41TV7AUiP9L.jpg',
-    brand: 'Courvoisier',
-    price: 632,
-    abv: 23
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      kegList: [
+        {
+          name: 'Hennessy Richard',
+          photo:
+            'https://www.hennessy.com/us/uploaded-media/images/2016/09/14/richard-image_01_sm.jpg',
+          brand: 'Hennessy',
+          price: 4944,
+          abv: 20
+        },
+        {
+          name: 'Belvedere Vodka',
+          photo:
+            'https://dg6qn11ynnp6a.cloudfront.net/wp-content/uploads/2015/03/Belvedere-Challenge-480x262.jpg',
+          brand: 'Belvedere Vodka',
+          price: 45,
+          abv: 15
+        },
+        {
+          name: 'Breckenridge Bourbon',
+          photo:
+            'https://cdn.pursuitist.com/wp-content/uploads/2013/02/Breckenridge-Bourbon-Whiskey.png',
+          brand: 'Breckenridge',
+          price: 450,
+          abv: 40
+        },
+        {
+          name: 'Courvoisier VS Cognac',
+          photo: 'http://www.lebigno.co.uk/img/41TV7AUiP9L.jpg',
+          brand: 'Courvoisier',
+          price: 632,
+          abv: 23
+        }
+      ]
+    }
   }
-];
 
-function App() {
-  var styles = {};
-  return (
-    <div style={styles}>
+  render(){
+    return(
+          <div style={styles}>
       <style jsx>{`
         font-family: Helvetica;
       `}</style>
@@ -68,7 +73,8 @@ function App() {
         </Switch>
       </div>
     </div>
-  );
+    );
+  }
 }
 
 //App.propTypes = {
