@@ -14,6 +14,8 @@ function KegList(props) {
           abv={keg.abv}
           pintsLeft={keg.pintsLeft}
           key={index}
+          onDecreaseKeg={props.onDecreaseKeg}
+          index={index}
         />
       ))}
     </div>
@@ -28,5 +30,6 @@ KegList.propTypes = {
   brand: PropTypes.string,
   price: PropTypes.number,
   abv: PropTypes.number,
-  pintsLeft: PropTypes.number
+  pintsLeft: PropTypes.number,
+  onDecreaseKeg: PropTypes.func
 };

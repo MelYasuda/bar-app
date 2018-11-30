@@ -52,6 +52,13 @@ class App extends React.Component {
         }
       ]
     };
+    this.handleDecreaseKeg=this.handleDecreaseKeg.bind(this);
+  }
+
+  handleDecreaseKeg(id){
+    let newKegList=this.state.kegList.slice();
+    newKegList[id].pintsLeft--;
+    this.setState({kegList: newKegList});
   }
 
   render() {
@@ -67,7 +74,7 @@ class App extends React.Component {
               exact
               path="/"
               render={props => (
-                <KegList {...props} kegList={this.state.kegList} />
+                <KegList {...props} kegList={this.state.kegList} onDecreaseKeg={this.handleDecreaseKeg} />
               )}
             />
             {/* <Route
