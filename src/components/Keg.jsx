@@ -19,7 +19,7 @@ function Keg(props) {
           <li>Pints left: {props.pintsLeft}</li>
         </ul>
         <button onClick={() => handlePintSold(props.index) } className="btn btn-primary">
-          A pint sold
+          Pint sold
         </button>
       </div>
     </div>
