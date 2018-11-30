@@ -23,11 +23,11 @@ function CreateForm(props) {
   return(
     <div>
       <form onSubmit={handleFormSubmit}>
-        Liquor Brand: <input type="text" ref={(input)=>{_brand=input } }/>
-        Liquor Name: <input type="text" ref={(input)=>{ _name=input } } />
-        Photo URL: <input type="text" ref={(input)=>{ _photo=input }} />
-        ABV: <input type="text" ref={(input)=>{ _abv=input }} />
-        Pints Left: <input type="text" ref={(input) => _pintsLeft=input}/>
+        Liquor Brand: <input type="text" ref={(input)=>{_brand=input } }/><br />
+        Liquor Name: <input type="text" ref={(input)=>{ _name=input } } /><br />
+        Photo URL: <input type="text" ref={(input)=>{ _photo=input }} /><br />
+        ABV: <input type="text" ref={(input)=>{ _abv=input }} /><br />
+        Pints Left: <input type="text" ref={(input) => _pintsLeft=input}/><br />
         <button className='btn btn-success' type='submit'>Create New Liquor!</button>
       </form>
     </div>
