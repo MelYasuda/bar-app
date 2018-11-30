@@ -7,13 +7,14 @@ function Keg(props) {
       <img className="card-img-top" src={props.photo} alt="Card image cap" />
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
-        <p className="card-text">
-          <p>{props.brand}</p>
-          <p>{props.price}</p>
-          <p>{props.abv}</p>
-        </p>
+        <ul className="card-text">
+          <li>Liquir brand: {props.brand}</li>
+          <li>Liquir Name: {props.price}</li>
+          <li>ABV: {props.abv}</li>
+          <li>Pints left: {props.pintsLeft}</li>
+        </ul>
         <a href="#" className="btn btn-primary">
-          Go somewhere
+          A pint sold
         </a>
       </div>
     </div>

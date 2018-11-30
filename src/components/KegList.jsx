@@ -12,6 +12,7 @@ function KegList(props) {
           brand={keg.brand}
           price={keg.price}
           abv={keg.abv}
+          pintsLeft={keg.pintsLeft}
           key={index}
         />
       ))}
@@ -27,4 +28,5 @@ KegList.propTypes = {
   brand: PropTypes.string,
   price: PropTypes.number,
   abv: PropTypes.number,
+  pintsLeft: PropTypes.number
 };
